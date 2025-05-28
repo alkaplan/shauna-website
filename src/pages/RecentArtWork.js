@@ -3,6 +3,11 @@ import GalleryLayout from '../components/GalleryLayout';
 import ImageGallery from '../components/ImageGallery';
 
 const RecentArtWork = () => {
+  const sidebarLinks = [
+    { path: '/art-galleries/recent-work', label: 'Miniatures' },
+    { path: '/art-galleries/recent-work', label: 'Others (future)' }
+  ];
+
   // Sample images - these would be replaced with actual artwork
   const sampleImages = [
     {

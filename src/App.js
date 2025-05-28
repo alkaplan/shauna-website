@@ -14,7 +14,7 @@ import './App.css';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/shauna-website">
       <div className="App">
         <Header />
         <Routes>
