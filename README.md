@@ -1,70 +1,181 @@
-# Getting Started with Create React App
+# Shauna Holiman Portfolio Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A beautiful, modern portfolio website showcasing art, music, and creative projects.
 
-## Available Scripts
+## Quick Start
 
-In the project directory, you can run:
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-### `npm start`
+2. **Start the development server:**
+   ```bash
+   npm start
+   ```
+   The website will open at [http://localhost:3000](http://localhost:3000)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3. **Build for production:**
+   ```bash
+   npm run build
+   ```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Adding Your Content
 
-### `npm test`
+### Adding Images to Galleries
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. **Place your images** in the `src/assets/images/` folder
+2. **Update the image arrays** in the respective page files:
+   - Recent Art Work: `src/pages/RecentArtWork.js`
+   - Collaborations: `src/pages/Collaborations.js`
+   - Older Paintings: `src/pages/OlderPaintings.js`
+   - Stained Glass: `src/pages/StainedGlass.js`
 
-### `npm run build`
+**Example:** To add images to Recent Art Work:
+```javascript
+const sampleImages = [
+  {
+    src: '/assets/images/your-artwork-1.jpg',
+    alt: 'Description of artwork',
+    caption: 'Optional caption for the artwork'
+  },
+  {
+    src: '/assets/images/your-artwork-2.jpg',
+    alt: 'Description of second artwork',
+    caption: 'Another caption'
+  }
+];
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Adding Music Content
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **Upload audio files** to `src/assets/audio/`
+2. **Upload documents** to `src/assets/documents/`
+3. **Create dedicated pages** for Bijou and New Growth collections
+4. **Add audio players** and document links as needed
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Updating Contact Information
 
-### `npm run eject`
+Edit `src/pages/AboutContact.js` to add:
+- Your email address
+- Phone number
+- Location
+- Social media links
+- Any additional contact information
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Replacing Photos in About Section
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. **Add your photos** to `src/assets/images/`
+2. **Update the image sources** in `src/pages/AboutContact.js`:
+   - Replace the Rijksmuseum photo placeholder
+   - Replace the still life artwork placeholder
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Website Structure
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The website follows this navigation structure:
 
-## Learn More
+```
+Home
+├── Art Galleries
+│   ├── Recent Art Work (Miniatures, Others)
+│   ├── Collaborations (Santoleri Mural, Piano As Art)
+│   ├── Older Paintings (Paintings, Portraits)
+│   └── Stained Glass
+├── Music Galleries
+│   ├── Bijou (3 documents, 3 MP3s)
+│   ├── New Growth (1 document, 4 audio pieces)
+│   └── Future Collections
+├── Other Projects
+│   ├── Neil's Bar (1 film)
+│   ├── Fun in the Kitchen (Flip-books, Recipes)
+│   ├── French Project (Flip-books)
+│   └── Future Projects
+└── About/Contact
+    ├── Photo story
+    ├── Still life artwork
+    └── Contact information
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Design Features
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **Black header** with elegant navigation
+- **Dark theme** with sophisticated color palette
+- **Snell Roundhand font** for the main title
+- **Optima font** for navigation and body text
+- **Responsive design** that works on all devices
+- **Gallery layouts** with navigation arrows
+- **Sidebar navigation** for easy browsing
 
-### Code Splitting
+## File Organization
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+src/
+├── components/
+│   ├── Header.js           # Main navigation header
+│   ├── GalleryLayout.js    # Reusable gallery layout
+│   └── ImageGallery.js     # Image display with navigation
+├── pages/
+│   ├── Home.js             # Homepage
+│   ├── ArtGalleries.js     # Art galleries hub
+│   ├── RecentArtWork.js    # Recent artwork page
+│   ├── Collaborations.js   # Collaborative works
+│   ├── OlderPaintings.js   # Older paintings
+│   ├── StainedGlass.js     # Stained glass works
+│   ├── MusicGalleries.js   # Music hub
+│   ├── OtherProjects.js    # Other projects hub
+│   └── AboutContact.js     # About and contact page
+├── assets/
+│   ├── images/             # Place your artwork images here
+│   ├── audio/              # Place your music files here
+│   └── documents/          # Place PDFs and documents here
+├── App.js                  # Main application component
+└── App.css                 # Main stylesheet
+```
 
-### Analyzing the Bundle Size
+## Customization Tips
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Changing Colors
+Edit the CSS variables in `src/App.css`:
+- Background: `#333333`
+- Header: `#000000` 
+- Sidebar: `#4a4a4a`
 
-### Making a Progressive Web App
+### Adding New Gallery Sections
+1. Create a new page component in `src/pages/`
+2. Add the route in `src/App.js`
+3. Update navigation links in relevant components
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Adding Interactive Features
+- Audio players for music sections
+- Video players for project documentation
+- Image zoom functionality
+- Contact forms
 
-### Advanced Configuration
+## Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### GitHub Pages
+1. Install gh-pages: `npm install --save-dev gh-pages`
+2. Add to package.json:
+   ```json
+   "homepage": "https://yourusername.github.io/shauna-portfolio",
+   "scripts": {
+     "predeploy": "npm run build",
+     "deploy": "gh-pages -d build"
+   }
+   ```
+3. Deploy: `npm run deploy`
 
-### Deployment
+### Netlify
+1. Connect your GitHub repository to Netlify
+2. Set build command: `npm run build`
+3. Set publish directory: `build`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Support
 
-### `npm run build` fails to minify
+For technical questions or updates, refer to:
+- React documentation: [https://reactjs.org/](https://reactjs.org/)
+- React Router: [https://reactrouter.com/](https://reactrouter.com/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## License
+
+This portfolio website is created specifically for Shauna Holiman's artistic work.
